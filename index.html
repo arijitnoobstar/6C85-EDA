@@ -22,30 +22,158 @@
 
 			<h3>Overall Analysis Questions</h3>
 			<ol>
-				<li>In the last 10 years, how have </li>
-				<li>QUESTION_2</li>
-				<li>QUESTION_3</li>
+				<li>Over the last 24 years in Boston, what are the trends in the characteristics of property sales for investor buyers and
+					non-investor buyers? </li>
+				<li>How do different groups of investors and non-investors engage in property flipping in Boston and how do they benefit?</li>
+				<li>What patterns do we see among buyer-seller pairs for properties in Boston?</li>
 				<!-- ... Add more questions if necessary -->
 			</ol>
 		</section>
 
 		<section>
-			<h2> Understanding the Dataset</h2>
-			<p> test etst ets</p>
-			<h2>Discoveries & Insights</h2>
+			<h2> Exploring the Dataset</h2>
+			<p> This dataset initially contains about 49,000 entries of housing sale transactions
+				in Boston over the last 24 years. The dataset contains a lot of information on the characteristics
+				of each sales transaction that include investor data and pricing data. 
 
-			<!-- Repeat this block for V1 to V11, replacing the SRC with the path to your visualization HTML -->
+				To explore the dataset, we analyze the spread of variables among all columns to 'gut-check' and
+				see if their entries make sense. What I found immediately was that there are some nonsensical entries which we must filter out. 
+				The first thing I did was to filter out property prices within an acceptable range. I included homes that cost between $100,000
+				and $3,650,000. The upper bound was so that we can analyze the topic of speculation that does not include the 
+				ultra-wealthy. That would fit more towards the "housing for rich" subtheme. In this analysis, I am interested to see How
+				investor activity differs from that of non-investors in the more affordable price range (I say this
+				while acknowledging a 3.65 mil house falls a bit too far from my affordable range). The upper limit removes the 
+				top 5% of entries. The next thing I did was to remove data entries with no lat/long coordinates as I could not
+				visualze them on a map. I then did a further preliminary analysis by visualization.
+				</p>
+
+
+				<h4>Outliers and Anomalies</h4> 
+				<p>The preliminary examination of the data revealed several outliers in key variables of interest, such as 'bathrooms', 'mortgage', 'lotsize', and 'totrooms'. Outliers can skew the results and may not be representative of the dataset as a whole.</p>
+				<h4>Boxplot Analysis</h4>
+				<p>To identify and understand the nature of these outliers, boxplots were generated for each of these variables. The boxplots highlighted data points that were significantly distant from the rest of the data distribution, signaling the need for further inspection.</p>
+
+			</p>
+
+			<img src="cleantotroom.png" alt="Description of Image 1">
+
+			<img src="cleanbathroom.png" alt="Description of Image 1">
+			<p>For 'bathrooms' and 'totrooms', values that were beyond the typical range for residential properties were removed, as they were likely to be data entry errors or properties not relevant to the typical homebuyer.
+				Anything with more than 8 total rooms or 4 bathrooms were filtered out.
+			</p>
+			<img src="cleanmortgage.png" alt="Description of Image 1">
+			<p>The 'mortgage' variable contained some extremely high values, potentially indicating data entry errors. These were trimmed to include only the range consistent with residential financing. The image above 
+				shows clear outliers that need to be removed.
+			</p>
+			<img src="cleanplotsize.png" alt="Description of Image 1">
+			<p>he 'lotsize' variable also had outliers that could represent large inaccuracies. These were adjusted to focus on typical residential property sizes.
+			The image above clearly shows that there are outliers for lot sizes which were removed.
+			</p>
+
+			The resulting cleaned variables exhibited a much tighter distribution, which could then be used for more accurate analysis. This process not only improved the dataset's overall quality but also ensured that subsequent insights would be based on reliable and relevant data.
+
 			<figure>
 				<iframe src="V1.html" title="Visualization 1" width="1200" height="800"></iframe>
 				<figcaption>
-				[Write your insights for V1 here.]
+					Interactive heatmap of property sales, the color intensity is propostional to the purchase price 
 				</figcaption>
 			</figure>
-			<p> insihhgtss</p>
+			<p>The heatmap above shows the general region of the property sales. The gut check shows that the properties
+				are indeed spread around the Boston area. One interesting observation is that most of the purchases happen 
+				in the central part of Boston (Back Bay to Beacon Hill, to South End, North End, Financial District etc.). The home
+				prices are also higher in these areas than the prices in the other districts of Boston, liek Dorchester
+				or Mattapan etc. This might reflect either a bias in the data collection or property transactions or flipping
+				happens more often in the central Boston area. We are now in a good shape to explore the questions posed.
+			</p>
 
-			<!-- ... Repeat for V2 to V11 -->
+			<h2>Discoveries & Insights</h2>
+			
+				<h3>Question: Over the last 24 years in Boston, what are the trends in the characteristics of property sales for investor buyers and
+					non-investor buyers? </h3>
+			
+				<figure>
+					<iframe src="V4.html" title="Visualization 4" width="1200" height="800"></iframe>
+					<figcaption>
+					</figcaption>
+				</figure>
+				<p></p>
+			
+				<figure>
+					<iframe src="V6.html" title="Visualization 6" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V6 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V6]</p>
 
-		</section>
+				<figure>
+					<iframe src="V5.html" title="Visualization 5" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V5 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V5]</p>
+			
+
+			
+				<figure>
+					<iframe src="V7.html" title="Visualization 7" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V7 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V7]</p>
+			
+				<figure>
+					<iframe src="V8.html" title="Visualization 8" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V8 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V8]</p>
+			
+				<figure>
+					<iframe src="V9.html" title="Visualization 9" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V9 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V9]</p>
+			
+				<figure>
+					<iframe src="V10.html" title="Visualization 10" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V10 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V10]</p>
+			
+				<figure>
+					<iframe src="V11.html" title="Visualization 11" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V11 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V11]</p>
+
+				<figure>
+					<iframe src="V2.html" title="Visualization 2" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V2 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V2]</p>
+			
+				<figure>
+					<iframe src="V3.html" title="Visualization 3" width="1200" height="800"></iframe>
+					<figcaption>
+						[Write your insights for V3 here.]
+					</figcaption>
+				</figure>
+				<p>[Insights for V3]</p>
+
+			</section>
+			
 
 		<section>
 			<h2>Summary</h2>
